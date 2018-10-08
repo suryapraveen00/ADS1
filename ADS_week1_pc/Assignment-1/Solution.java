@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 
 import java.io.*;
@@ -19,9 +20,9 @@ class AddLargeNumbers {
 
 		
 		Iterator<Integer> itr = ll.iterator();
-		while(itr.hasNext()) {
+		/*while(itr.hasNext()) {
 			System.out.println(itr.next());
-		}
+		}*/
 		
 		//digitsToNumber(ll);
 		return ll;
