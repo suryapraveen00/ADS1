@@ -1,0 +1,64 @@
+import java.util.Scanner;
+class AddLargeNumbers {
+    
+    public static LinkedList numberToDigits(String number) {
+		LinkedList<Integer> ll = new LinkedList<>();
+		int number1 = Integer.parseInt(number);
+		while (number1 > 0) {
+		    //System.out.println( "*"+number1% 10);
+		    ll.add(number1%10);
+		    number1 = number1 / 10;
+		   
+		}
+
+		
+		Iterator<Integer> itr = ll.iterator();
+		while(itr.hasNext()) {
+			System.out.print(itr.next());
+		}
+//		digitsToNumber(ll);
+		return ll;
+    }
+
+    public static String digitsToNumber(LinkedList list) {
+		
+		String num1 ="";
+    	Iterator<Integer> itr = list.iterator();
+    	while(itr.hasNext()) {
+			num1+=itr.next();
+		}
+    	
+    	
+		return num1;
+
+    }
+
+    public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
+
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String p = sc.nextLine();
+        String q = sc.nextLine();
+        switch(input){
+            case "numberToDigits":
+                LinkedList pDigits = AddLargeNumbers.numberToDigits(p);
+                LinkedList qDigits = AddLargeNumbers.numberToDigits(q);
+                System.out.println(AddLargeNumbers.digitsToNumber(pDigits));
+                System.out.println(AddLargeNumbers.digitsToNumber(qDigits));
+                break;
+
+            case "addLargeNumbers":
+                LinkedList pDigits = AddLargeNumbers.numberToDigits(p);
+                LinkedList qDigits = AddLargeNumbers.numberToDigits(q);
+                LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+                System.out.println(AddLargeNumbers.digitsToNumber(result));
+                break;
+        }
+    }
+    
+}
