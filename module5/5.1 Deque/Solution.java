@@ -1,4 +1,4 @@
-//package com.links.datastructures;
+
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -19,7 +19,9 @@ class LinkedQueue {
 	boolean enqueue(int x) {
 		
 		//String elements ="";
+		
 		ll.add(++rear, x);
+		rear=ll.size()-1;
 		/*Iterator itr = ll.iterator();
 		while (itr.hasNext()) {
 			elements+=itr.next();
@@ -34,7 +36,7 @@ class LinkedQueue {
 	int dequeue() {
 
 		ll.remove(front + 1);
-		//rear--;
+		rear=ll.size()-1;
 
 		//System.out.println("After removing from queue");
 		/*Iterator itr = ll.iterator();
@@ -47,8 +49,9 @@ class LinkedQueue {
 	}
 
 	int deleteEnd() {
-
+		
 		ll.remove(rear--);
+		rear=ll.size()-1;
 		//System.out.println("deleting elements from the end of queue");
 		//Iterator itr = ll.iterator();
 
@@ -64,6 +67,7 @@ class LinkedQueue {
 	int addFront(int z) {
 		
 		ll.add(front+1,z);
+		rear=ll.size()-1;
 		//System.out.println("Adding elements at the front of  queue");
 		/*Iterator itr = ll.iterator();
 
@@ -81,7 +85,7 @@ class LinkedQueue {
 
 }
 
-public class Solution {
+public class Solution{
 
 	public static void main(String[] args) {
  		Scanner sc = new Scanner(System.in);
@@ -91,6 +95,7 @@ public class Solution {
  		//sc.next();
  		for(int i=1;i<=operations;i++) {
  			//System.out.println("input - "+i);
+ 			//sc.next();
  			switch(sc.next()) {
  			case "pushLeft"://q.enqueue(sc.nextInt());
  				q.addFront(sc.nextInt());
@@ -109,7 +114,9 @@ public class Solution {
  			case "isEmpty":System.out.println(q.ll.isEmpty());
  			break;
  			
- 			case "size":System.out.println(q.ll.size());
+ 			case "size":
+ 				System.out.println(q.ll.size());
+ 			
  			break;
 
  			}
