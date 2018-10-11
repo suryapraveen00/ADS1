@@ -1,29 +1,32 @@
-
+//package com.links.datastructures;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-class Solution {
+class LinkedQueue {
 
 	int rear;
 	int front;
 	LinkedList<Integer> ll = new LinkedList<>();
 
-	public Solution() {
+	public LinkedQueue() {
 
-		rear = -1;
+		rear = 0;
 		front = -1;
 	}
 
 	boolean enqueue(int x) {
-
+		
+		//String elements ="";
 		ll.add(++rear, x);
-		Iterator itr = ll.iterator();
+		/*Iterator itr = ll.iterator();
 		while (itr.hasNext()) {
-			System.out.println(itr.next());
+			elements+=itr.next();
+			System.out.println("*"+elements);
 
-		}
+		}*/
+		System.out.println(ll);
 		return true;
 
 	}
@@ -31,56 +34,70 @@ class Solution {
 	int dequeue() {
 
 		ll.remove(front + 1);
-		rear--;
+		//rear--;
 
-		System.out.println("After removing from queue");
-		Iterator itr = ll.iterator();
+		//System.out.println("After removing from queue");
+		/*Iterator itr = ll.iterator();
 
 		while (itr.hasNext()) {
 			System.out.println(itr.next());
-		}
+		}*/
+		System.out.println(ll);
 		return 1;
 	}
 
 	int deleteEnd() {
 
 		ll.remove(rear--);
-		System.out.println("deleting elements from the end of queue");
-		Iterator itr = ll.iterator();
+		//System.out.println("deleting elements from the end of queue");
+		//Iterator itr = ll.iterator();
 
-		while (itr.hasNext()) {
+		/*while (itr.hasNext()) {
 			System.out.println(itr.next());
-		}
+		}*/
+		
+		System.out.println(ll);
 		return 1;
 
 	}
 	
 	int addFront(int z) {
 		
-		ll.add(++front,z);
-		System.out.println("Adding elements at the front of  queue");
-		Iterator itr = ll.iterator();
+		ll.add(front+1,z);
+		//System.out.println("Adding elements at the front of  queue");
+		/*Iterator itr = ll.iterator();
 
 		while (itr.hasNext()) {
 			System.out.println(itr.next());
-		}
+		}*/
+		System.out.println(ll);
 		return 1;
 		
 	}
 	
 	
+	
+	
+
+}
+
+public class Solution {
+
 	public static void main(String[] args) {
  		Scanner sc = new Scanner(System.in);
- 		Solution q = new Solution();
+ 		LinkedQueue q = new LinkedQueue();
 
  		int operations =sc.nextInt();
- 		
+ 		//sc.next();
  		for(int i=1;i<=operations;i++) {
+ 			//System.out.println("input - "+i);
  			switch(sc.next()) {
- 			case "pushLeft":q.addFront(sc.nextInt());
+ 			case "pushLeft"://q.enqueue(sc.nextInt());
+ 				q.addFront(sc.nextInt());
  			break;
  			
- 			case "pushRight":q.enqueue(sc.nextInt());
+ 			case "pushRight"://q.addFront(sc.nextInt());
+ 				q.enqueue(sc.nextInt());
  			break;
  			
  			case "popLeft":	q.dequeue();
@@ -114,8 +131,4 @@ class Solution {
 		q.addFront(60);*/
 
 	}
-	
-
 }
-
-
