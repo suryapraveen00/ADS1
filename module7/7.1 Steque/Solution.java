@@ -74,7 +74,7 @@ public class Solution {
 		// sc.next();
 
 		for (int i = 0; i < operations + 1; i++) {
-			System.out.println();
+			//System.out.println();
 
 			do {
 
