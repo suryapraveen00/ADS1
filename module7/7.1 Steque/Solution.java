@@ -107,6 +107,7 @@ public class Solution {
 				}
 
 			} while (sc.hasNextLine());
+			if(i>0)
 			System.out.println("");
 			sq.ll.clear();
 
