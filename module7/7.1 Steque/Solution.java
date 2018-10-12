@@ -43,14 +43,18 @@ class StackQueue {
 		Scanner sc = new Scanner(System.in);
 
 		if (ll.isEmpty()) {
-			// sc.nextLine();
 			System.out.println("Steque is empty");
+			
+
 
 		} else {
 			ll.remove(front + 1);
 			// System.out.println(ll);
 			String s = ll.toString();
-			System.out.println(s.substring(1, s.length() - 1));
+			if(!(ll.isEmpty())) {
+				System.out.println(s.substring(1, s.length() - 1));
+			}
+			
 
 		}
 		return 1;
@@ -80,8 +84,9 @@ public class Solution {
 				break;
 
 			case "pop":
-
+			
 				sq.pop();
+				sc.nextLine();
 				break;
 
 			}
