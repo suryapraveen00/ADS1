@@ -62,7 +62,7 @@ class StackQueue {
 	}
 }
 
-public class Solution{
+public class Solution {
 
 	public static void main(String[] args) {
 		StackQueue sq = new StackQueue();
@@ -74,26 +74,23 @@ public class Solution{
 		// sc.next();
 
 		for (int i = 0; i < operations + 1; i++) {
-			//System.out.println();
+			// System.out.println();
 
 			do {
 
 				String in = sc.nextLine().trim();
 //				System.out.println(in.length());
-				
-					if (in.length() == 0) {
-							
-							if(!(sq.ll.isEmpty())) {
-								sq.ll.clear();
-								System.out.println();
-								break;
-							}
-							
-						
-						
+
+				if (in.length() == 0) {
+
+					if (!(sq.ll.isEmpty())) {
+						sq.ll.clear();
+						System.out.println();
+						break;
 					}
-				
-				
+
+				}
+
 				String inp[] = in.split(" ");
 				switch (inp[0]) {
 				case "push":
@@ -114,7 +111,7 @@ public class Solution{
 
 				}
 
-			} while (true);
+			} while (sc.hasNextLine());
 //			System.out.println("Ending ");
 
 		}
