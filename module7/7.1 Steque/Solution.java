@@ -43,7 +43,7 @@ class StackQueue {
 		Scanner sc = new Scanner(System.in);
 
 		if (ll.isEmpty()) {
-			System.out.println("Steque is empty");
+			System.out.println("Steque is empty.");
 			
 
 
@@ -55,7 +55,7 @@ class StackQueue {
 			if(!(ll.isEmpty())) {
 				System.out.println(s.substring(1, s.length() - 1));
 			}else {
-				System.out.println("Steque is empty");
+				System.out.println("Steque is empty.");
 			}
 			
 
