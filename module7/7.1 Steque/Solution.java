@@ -1,4 +1,4 @@
-
+//package com.sample.linked;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -75,6 +75,7 @@ public class Solution {
 
 		for (int i = 0; i < operations + 1; i++) {
 			// System.out.println();
+			
 
 			do {
 
@@ -82,13 +83,7 @@ public class Solution {
 //				System.out.println(in.length());
 
 				if (in.length() == 0) {
-
-					if (!(sq.ll.isEmpty())) {
-						sq.ll.clear();
-						System.out.println();
-						break;
-					}
-
+					break;
 				}
 
 				String inp[] = in.split(" ");
@@ -112,7 +107,8 @@ public class Solution {
 				}
 
 			} while (sc.hasNextLine());
-//			System.out.println("Ending ");
+			System.out.println("");
+			sq.ll.clear();
 
 		}
 
