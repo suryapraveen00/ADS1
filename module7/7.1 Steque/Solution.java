@@ -80,11 +80,20 @@ public class Solution {
 
 				String in = sc.nextLine().trim();
 //				System.out.println(in.length());
-				if (in.length() == 0&&i>1) {
-					sq.ll.clear();
-					System.out.println();
-					break;
-				}
+				
+					if (in.length() == 0) {
+							
+							if(!(sq.ll.isEmpty())) {
+								sq.ll.clear();
+								System.out.println();
+								break;
+							}
+							
+						
+						
+					}
+				
+				
 				String inp[] = in.split(" ");
 				switch (inp[0]) {
 				case "push":
