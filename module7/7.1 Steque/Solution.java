@@ -71,15 +71,15 @@ public class Solution {
 		// sc.next();
 
 		// System.out.println("input - "+i);
-		//sc.next();
+		// sc.next();
 
-		for (int i = 0; i < operations+1; i++) {
-			
+		for (int i = 0; i < operations + 1; i++) {
+
 			do {
 
 				String in = sc.nextLine().trim();
 //				System.out.println(in.length());
-				if(in.length()==0) {
+				if (in.length() == 0) {
 					sq.ll.clear();
 					System.out.println();
 					break;
@@ -103,17 +103,11 @@ public class Solution {
 					break;
 
 				}
-				
+
 			} while (sc.hasNext());
 //			System.out.println("Ending ");
 
 		}
-
-		/*
-		 * sq.push(1); sq.push(2); sq.push(3); sq.push(4); sq.enqueue(0); sq.enqueue(1);
-		 * sq.pop(); sq.pop(); sq.pop(); sq.pop(); sq.pop(); sq.pop(); sq.pop();
-		 * sq.pop();
-		 */
 
 	}
 
