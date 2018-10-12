@@ -62,7 +62,7 @@ class StackQueue {
 	}
 }
 
-public class Solution {
+public class Solution{
 
 	public static void main(String[] args) {
 		StackQueue sq = new StackQueue();
@@ -114,7 +114,7 @@ public class Solution {
 
 				}
 
-			} while (sc.hasNext());
+			} while (true);
 //			System.out.println("Ending ");
 
 		}
