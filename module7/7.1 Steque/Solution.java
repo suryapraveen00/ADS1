@@ -104,7 +104,7 @@ public class Solution {
 
 				}
 				
-			} while (true);
+			} while (sc.hasNext());
 //			System.out.println("Ending ");
 
 		}
