@@ -99,8 +99,8 @@ public class Solution {
 					break;
 
 				}
-
-			} while (sc.hasNext());
+				
+			} while (sc.hasNext()!=false);
 			
 
 		}
