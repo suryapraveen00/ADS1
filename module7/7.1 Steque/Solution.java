@@ -44,20 +44,17 @@ class StackQueue {
 
 		if (ll.isEmpty()) {
 			System.out.println("Steque is empty.");
-			
-
 
 		} else {
-			//System.out.println(ll.size());
+			// System.out.println(ll.size());
 			ll.remove(front + 1);
 			// System.out.println(ll);
 			String s = ll.toString();
-			if(!(ll.isEmpty())) {
+			if (!(ll.isEmpty())) {
 				System.out.println(s.substring(1, s.length() - 1));
-			}else {
+			} else {
 				System.out.println("Steque is empty.");
 			}
-			
 
 		}
 		return 1;
@@ -74,41 +71,46 @@ public class Solution {
 		// sc.next();
 
 		// System.out.println("input - "+i);
-		 //sc.next();
-		
-		while (operations >= 1) {
-			String in = sc.nextLine();
-			String inp[] = in.split(" ");
-			switch (inp[0]) {
-			case "push":
-//				int y=sc.nextInt();
-//				System.out.println(Integer.parseInt(inp[1]));
-				sq.push(Integer.parseInt(inp[1]));
-				break;
+		// sc.next();
 
-			case "enqueue":
-				sq.enqueue(Integer.parseInt(inp[1]));
-				break;
+		for (int i = 0; i < operations; i++) {
 
-			case "pop":
+			do {
+
+				String in = sc.nextLine();
+
+				String inp[] = in.split(" ");
+
+				switch (inp[0]) {
+				case "push":
+//					int y=sc.nextInt();
+//					System.out.println(Integer.parseInt(inp[1]));
+					sq.push(Integer.parseInt(inp[1]));
+					break;
+
+				case "enqueue":
+					sq.enqueue(Integer.parseInt(inp[1]));
+					break;
+
+				case "pop":
+
+					sq.pop();
+					// sc.nextLine();
+					break;
+
+				}
+
+			} while (sc.hasNext());
 			
-				sq.pop();
-				//sc.nextLine();
-				break;
-
-			}
-			
-		
-
 
 		}
 
-		
 		/*
 		 * sq.push(1); sq.push(2); sq.push(3); sq.push(4); sq.enqueue(0); sq.enqueue(1);
 		 * sq.pop(); sq.pop(); sq.pop(); sq.pop(); sq.pop(); sq.pop(); sq.pop();
 		 * sq.pop();
 		 */
+
 	}
 
 }
