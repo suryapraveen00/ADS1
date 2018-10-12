@@ -74,6 +74,7 @@ public class Solution {
 		// sc.next();
 
 		for (int i = 0; i < operations + 1; i++) {
+			System.out.println();
 
 			do {
 
@@ -81,7 +82,6 @@ public class Solution {
 //				System.out.println(in.length());
 				if (in.length() == 0) {
 					sq.ll.clear();
-					System.out.println();
 					break;
 				}
 				String inp[] = in.split(" ");
