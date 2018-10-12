@@ -71,16 +71,20 @@ public class Solution {
 		// sc.next();
 
 		// System.out.println("input - "+i);
-		// sc.next();
+		//sc.next();
 
-		for (int i = 0; i < operations; i++) {
-
+		for (int i = 0; i < operations+1; i++) {
+			
 			do {
 
-				String in = sc.nextLine();
-
+				String in = sc.nextLine().trim();
+//				System.out.println(in.length());
+				if(in.length()==0) {
+					sq.ll.clear();
+					System.out.println();
+					break;
+				}
 				String inp[] = in.split(" ");
-
 				switch (inp[0]) {
 				case "push":
 //					int y=sc.nextInt();
@@ -100,8 +104,8 @@ public class Solution {
 
 				}
 				
-			} while (sc.hasNext()!=false);
-			
+			} while (true);
+//			System.out.println("Ending ");
 
 		}
 
