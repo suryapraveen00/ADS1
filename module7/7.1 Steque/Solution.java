@@ -48,11 +48,14 @@ class StackQueue {
 
 
 		} else {
+			//System.out.println(ll.size());
 			ll.remove(front + 1);
 			// System.out.println(ll);
 			String s = ll.toString();
 			if(!(ll.isEmpty())) {
 				System.out.println(s.substring(1, s.length() - 1));
+			}else {
+				System.out.println("Steque is empty");
 			}
 			
 
@@ -71,22 +74,26 @@ public class Solution {
 		// sc.next();
 
 		// System.out.println("input - "+i);
-		 sc.next();
+		 //sc.next();
+		
 		while (operations >= 1) {
-			switch (sc.next()) {
+			String in = sc.nextLine();
+			String inp[] = in.split(" ");
+			switch (inp[0]) {
 			case "push":
-				sq.push(sc.nextInt());
-
+//				int y=sc.nextInt();
+//				System.out.println(Integer.parseInt(inp[1]));
+				sq.push(Integer.parseInt(inp[1]));
 				break;
 
 			case "enqueue":
-				sq.enqueue(sc.nextInt());
+				sq.enqueue(Integer.parseInt(inp[1]));
 				break;
 
 			case "pop":
 			
 				sq.pop();
-				sc.nextLine();
+				//sc.nextLine();
 				break;
 
 			}
