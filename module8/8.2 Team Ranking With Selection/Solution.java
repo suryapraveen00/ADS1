@@ -1,109 +1,88 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-class Teams
+class Team
 {
-	String name;
-	int noofwins;
-	int noofloses;
-	int noofdraws;
-	Teams(String name,int noofwins,int noofloses,int noofdraws)
+	String TeamName;
+	int Wins,Losses,Draws;
+	public Team(String t,int w,int l,int d)
 	{
-		this.name=name;
-		this.noofwins=noofwins;
-		this.noofloses=noofloses;
-		this.noofdraws=noofdraws;
+		this.TeamName=t;
+		this.Wins=w;
+		this.Losses=l;
+		this.Draws=d;
 	}
-	
 }
-class SelectionSort 
-{ 
-	int count=0;
-    void sort(Teams a[]) 
-    { 
-    	int i=0;
-        while(a[i]!=null)
-        {
-        	if(a[i]!=null)
-        	{
-        		count++;
-        	}
-        	i++;
-        }
-        for(i=0;i<count;i++) 
-        { 
-            // Find the minimum element in unsorted array 
-            int min=i; 
-            for(int j=i+1;j<count;j++)
-            {
-                if(a[j].noofwins > a[min].noofwins)
-                {
-                    min=j;
-                }
-                if(a[j].noofwins == a[min].noofwins)
-                {
-                	if(a[j].noofloses<a[min].noofloses) 
-                	{
-                        min=j; 
-                	}
-                }
-                if((a[j].noofwins == a[min].noofwins)&&(a[j].noofloses == a[min].noofloses)) 
-                {
-                	if(a[j].noofdraws>a[min].noofdraws) 
-                	{
-                        min=j;
-                	}
-                }
-            }
-            Teams temp = a[min]; 
-            a[min] = a[i]; 
-            a[i] = temp; 
-        } 
-    } 
-   
-    void printArray(Teams a[]) 
-    { 
-        for (int i=0; i<count; i++) 
-        	if(count==1)
-            {
-            	System.out.println(a[0].name);
-            	break;
-            }
-        	else if((i+1)!=count)
-	        {
-            	System.out.print(a[i].name+","); 
-	        }
-	        else
-	        {
-	            System.out.print(a[i].name);
-	        }
-              System.out.println(); 
-       
-    } 
-} 
-class Solution 
+class Solution
 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int i=0;
-		Teams k[]= new Teams[10];
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Team> al=new ArrayList<Team>();
 		while(sc.hasNext())
 		{
-			String team = sc.nextLine();
-			if(team!=null)
-			{
-				String[] token= team.split(",");
-				String name= token[0];
-				int wins= Integer.parseInt(token[1]);
-		int loses= Integer.parseInt(token[2]);
-		int draws= Integer.parseInt(token[3]);
-		
-		k[i]=new Teams(name,wins,loses,draws);
-		i++;
+			String a=sc.nextLine();
+			String []b=a.split(",");
+			Team t=new Team(b[0],Integer.parseInt(b[1]),Integer.parseInt(b[2]),Integer.parseInt(b[3]));
+			al.add(t);
 		}
-		}
-		SelectionSort so =new SelectionSort();
-		so.sort(k);
-		so.printArray(k);
+//		Iterator itr=al.iterator();
+//		   while(itr.hasNext())
+//		   {
+//			   Team t=(Team) itr.next();
+//			   System.out.print(t.Draws+",");
+//		   }
+			   for (int i = 0; i < al.size()-1; i++)
+			   {
+			      int min = i;
+			      for (int j = i+1; j < al.size(); j++)
+			    	  if (compare(al.get(j),al.get(min))) min = j;
+			      Team temp = al.get(i);
+			      al.set(i, al.get(min));
+			      al.set(min, temp);
+			      }
+			   Iterator itr1=al.iterator();
+			   while(itr1.hasNext())
+			   {
+				   Team t=(Team) itr1.next();
+				   if(!itr1.hasNext())
+				   {
+					   System.out.print(t.TeamName);
+					   break;
+				   }
+				   System.out.print(t.TeamName+",");
+			   }
+			   
 	}
+	 public static boolean  compare(Object a,Object b)
+	   {
+		 Team t1=(Team)a;
+		 Team t2=(Team)b;
+		   if(t1.Wins==t2.Wins)
+		   {
+			   if(t1.Losses==t2.Losses)
+			   {
+				   if(t1.Draws>t2.Draws)
+				   {
+					   return true;
+				   }
+				   else 
+					   return false;
+				   
+			   }
+			   else if(t1.Losses<t2.Losses)
+			   {
+				   return true;
+			   }
+			   else
+				   return false;
+		   }
+		    if(t1.Wins>t2.Wins)
+		   {
+			   return true;
+		   }
+		   else
+			   return false;
+	   }
 }
-
