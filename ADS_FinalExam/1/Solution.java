@@ -70,15 +70,15 @@ public class Solution {
 
 				switch (s2[2]) {
 				case "1":
-					System.out.print(student[h.hashfunction(s2[1])].Name);
+					System.out.println(student[h.hashfunction(s2[1])].Name);
 					break;
 
 				case "2":
-					System.out.print(student[h.hashfunction(s2[1])].total_marks);
+					System.out.println(student[h.hashfunction(s2[1])].total_marks);
 					break;
 				}
 			} else {
-				System.out.print("Student doesn't exists...");
+				System.out.println("Student doesn't exists...");
 			}
 		}
 
